@@ -1,0 +1,16 @@
+<h1 class="headline-xl">Feature Today</h1>
+<app-tabs
+  [tabs]="[
+    { key: 'moviesTab', label: 'Movies', content: moviesTab },
+    { key: 'seriesTab', label: 'Series', content: seriesTab }
+  ]"
+>
+  <ng-template #moviesTab>
+    <app-movie-section [items]="movies"></app-movie-section>
+  </ng-template>
+  <ng-template #seriesTab>
+    <app-movie-section [items]="series"></app-movie-section>
+  </ng-template>
+</app-tabs>
+<h1 class="headline-xl">Premieres and announcements</h1>
+<app-movie-section [items]="premieres"></app-movie-section>

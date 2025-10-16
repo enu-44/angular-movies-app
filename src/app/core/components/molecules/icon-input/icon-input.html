@@ -1,0 +1,12 @@
+<app-input
+  [type]="type()"
+  [control]="control()"
+  [placeholder]="placeholder()"
+  (valueChanged)="onValueChanged.emit($event)"
+>
+  <ng-icon
+    input-icon
+    [name]="icon()"
+    class="ml-3 h-5 w-5 text-gray-400"
+  />
+</app-input>

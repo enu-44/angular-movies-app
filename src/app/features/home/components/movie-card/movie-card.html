@@ -1,0 +1,22 @@
+<div class="w-48 rounded-lg overflow-hidden shadow-md">
+  <!-- Imagen con calificación superpuesta -->
+  <div class="relative">
+    <img
+      [src]="imageUrl"
+      [alt]="title"
+      class="w-full h-72 object-cover"
+    />
+    <div
+      class="absolute bottom-0 left-0 bg-black text-yellow-400 text-[16px] px-3 py-2 flex items-center gap-1"
+    >
+      <ng-icon [name]="iconName" class="w-4 h-4"></ng-icon>
+      <span class="text-white">{{ rating }}</span>
+    </div>
+  </div>
+  <!-- Título -->
+  <div class="p-2">
+    <h3 class="body-2 line-clamp-2">
+      {{ title }}
+    </h3>
+  </div>
+</div>

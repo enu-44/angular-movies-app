@@ -1,0 +1,8 @@
+<app-carrusel [items]="items()" [itemTemplate]="cardTpl" />
+<ng-template #cardTpl let-movie>
+  <app-movie-card
+    [imageUrl]="movie.imageUrl"
+    [title]="movie.title"
+    [rating]="movie.rating"
+  />
+</ng-template>

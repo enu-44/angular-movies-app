@@ -1,0 +1,29 @@
+<section class="relative">
+  @if (canScrollLeft()) {
+    <app-carrusel-button
+      position="left"
+      ariaLabel="Scroll Left"
+      (onClick)="scrollLeft()"
+    />
+  }
+  <div
+    #scrollContainer
+    class="flex gap-4 overflow-x-auto scroll-smooth py-4"
+    (scroll)="checkScroll()"
+  >
+    @for (item of items(); track $index) {
+      <ng-container
+        [ngTemplateOutlet]="itemTemplate()"
+        [ngTemplateOutletContext]="{ $implicit: item }"
+      />
+    }
+  </div>
+
+  @if (canScrollRight()) {
+    <app-carrusel-button
+      position="right"
+      ariaLabel="Scroll Right"
+      (onClick)="scrollRight()"
+    />
+  }
+</section>

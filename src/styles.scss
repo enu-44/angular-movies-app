@@ -1,2 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
 @use "tailwindcss";
+
+
+$black: #000000;
+$gray900: #212121;
+$gray100: #F5F5F5;
+$black: #000000;
+$yellow600: #FDD835;
+$gradient: linear-gradient(130.29deg, #FFEE58 0%, #FF8F00 104.33%);
+
+
+body{
+    background-color: $black;
+    font-weight: 300;
+    font-size: 17px;
+    kerning: 0.5px;
+}
+
+.headline-xl{
+    color: $yellow600;
+    font-weight: bold;
+    font-size: 40px;
+    kerning: 0.25px;
+}
+
+.headline-l{
+    font-weight: bold;
+    font-size: 32px;
+    kerning: 0.5px;
+}
+
+.headline-l{
+    font-weight: medium;
+    font-size: 21px;
+    kerning: 0.5px;
+}
+
+
+.body-2{
+    font: "Lato";
+    font-weight: 400;
+    font-style: normal;
+    size: 15px;
+    line-height: 21.75px;
+    letter-spacing: 0.25px;
+    text-align: center;
+    color: $gray100;
+}

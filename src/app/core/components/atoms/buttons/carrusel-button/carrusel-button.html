@@ -1,0 +1,14 @@
+<button
+  (click)="onClick.emit()"
+  [attr.aria-label]="ariaLabel()"
+  [class]="[
+    'absolute top-1/2 -translate-y-1/2 z-10   shadow',
+    'w-10 h-10 flex items-center justify-center',
+    'rounded-md',
+    position() === 'left' ? 'left-0 ml-3' : 'right-0 mr-3',
+    class()
+  ].join(' ')"
+>
+
+<svg-icon [key]="getIcon()"   class="w-10 h-10 text-white hover:text-[#FDD835] transition-colors duration-100" fontSize="40px"></svg-icon>
+</button>

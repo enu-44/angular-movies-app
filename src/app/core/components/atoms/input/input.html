@@ -1,1 +1,27 @@
-<p>input works!</p>
+<div class="relative flex items-center border rounded-md bg-white focus-within:ring-2 focus-within:ring-yellow-500">
+  <ng-content select="[input-icon]"></ng-content>
+
+  @if (control()) {
+    <input
+      [type]="type()"
+      [formControl]="control()!"
+      [placeholder]="placeholder()"
+      class="flex-1 px-3 py-2 bg-transparent focus:outline-none"
+      (input)="valueChanged.emit($event.target.value)"
+    />
+  } @else {
+    <input
+      [type]="type()"
+      [(ngModel)]="modelValue"
+      [placeholder]="placeholder()"
+      class="flex-1 px-3 py-2 bg-transparent focus:outline-none"
+      (input)="valueChanged.emit(modelValue)"
+    />
+  }
+</div>
+
+@if (control()?.invalid && control()?.touched) {
+  <div class="text-red-500 text-sm mt-1">
+    {{ errorMessage() }}
+  </div>
+}
