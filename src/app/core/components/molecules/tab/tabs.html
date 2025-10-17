@@ -1,15 +1,12 @@
 <div class="w-full">
-  <!-- Tab headers -->
   <div class="flex border-b border-gray-700 text-white">
     @for (tab of tabs; track tab.key) {
       <button
         (click)="setActive(tab.key)"
         class="px-4 py-2 text-sm font-medium transition-colors duration-300"
         [ngClass]="{
-          'text-white': isActive(tab.key),
-          'text-gray-400': !isActive(tab.key),
-          'border-b-2': isActive(tab.key),
-          'border-white': isActive(tab.key)
+          'text-white border-b-2 border-white': isActive(tab.key),
+          'text-gray-400': !isActive(tab.key)
         }"
       >
         {{ tab.label }}
@@ -17,10 +14,13 @@
     }
   </div>
 
-  <!-- Tab content -->
   <div class="p-0">
-    @if (content) {
-      <ng-container [ngTemplateOutlet]="content"></ng-container>
+    @for (tab of tabs; track tab.key) {
+      @if (cache.has(tab.key)) {
+        <div [hidden]="!isActive(tab.key)">
+          <ng-container [ngTemplateOutlet]="cache.get(tab.key)"></ng-container>
+        </div>
+      }
     }
   </div>
 </div>

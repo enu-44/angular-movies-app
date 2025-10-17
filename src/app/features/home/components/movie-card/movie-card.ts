@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgIcon } from '@ng-icons/core';
 
 @Component({
@@ -9,8 +10,17 @@ import { NgIcon } from '@ng-icons/core';
   styleUrl: './movie-card.scss'
 })
 export class MovieCard {
-  @Input() imageUrl!: string;
-  @Input() title!: string;
-  @Input() rating!: number;
-  @Input() iconName: string = 'heroStarSolid';
+  constructor(private _router: Router) { }
+  
+  imageUrl = input<string>();
+  title = input<string>();
+  rating = input<number>();
+  id = input.required<string>();
+
+   onDetail() {
+    this._router.navigate([
+      '/movie-detail',
+      this.id()
+    ]);
+  }
 }

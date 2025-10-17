@@ -6,6 +6,7 @@ export interface Movie {
   imageUrl: string;
   title: string;
   rating: number;
+  id: string;
 }
 
 @Component({
