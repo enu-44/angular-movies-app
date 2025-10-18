@@ -8,7 +8,7 @@
   }
   <div
     #scrollContainer
-    class="flex gap-4 overflow-x-auto scroll-smooth py-4"
+    class="flex gap-4 overflow-x-auto scroll-smooth py-4 no-scrollbar"
     (scroll)="checkScroll()"
   >
     @for (item of items(); track $index) {

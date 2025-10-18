@@ -2,13 +2,6 @@ import { Component, input } from '@angular/core';
 import { CarruselComponent } from "../../../../core/components/organisms/carrusel/carrusel";
 import { MovieCard } from "../movie-card/movie-card";
 
-export interface Movie {
-  imageUrl: string;
-  title: string;
-  rating: number;
-  id: string;
-}
-
 @Component({
   selector: 'app-movie-section',
   imports: [CarruselComponent, MovieCard],
@@ -16,5 +9,10 @@ export interface Movie {
   styleUrl: './movie-section.scss'
 })
 export class MovieSection {
-  items = input<Movie[]>([]);
+  items = input<{
+    id: string,
+    title: string,
+    imageUrl: string,
+    rating: number
+  }[]>([]);
 }

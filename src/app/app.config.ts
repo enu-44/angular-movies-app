@@ -7,6 +7,7 @@ import { heroStarSolid } from '@ng-icons/heroicons/solid';
 import { provideSvgIcons } from '@ngneat/svg-icon';
 import { arrowLeftIcon } from './core/icons/arrow-left';
 import { arrowRightIcon } from './core/icons/arrow-right';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,6 +21,7 @@ export const appConfig: ApplicationConfig = {
       heroChevronRight,
       heroStarSolid
     }),
-    provideSvgIcons([arrowLeftIcon, arrowRightIcon])
+    provideSvgIcons([arrowLeftIcon, arrowRightIcon]),
+    provideHttpClient(withInterceptorsFromDi()) 
   ]
 };
